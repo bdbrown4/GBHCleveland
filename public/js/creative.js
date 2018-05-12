@@ -72,4 +72,18 @@
     }
   });
 
+  //
+  var userFormSubmit = function() {
+     $('#user-form"').on('submit', function (e) {
+      e.preventDefault(); 
+      var data = $("#user-form :input");
+       $.post('/postUserInfo', data);
+       console.log(data)
+
+    });
+  });
+
+  userFormSubmit();
+  console.log(userFormSubmit());
+  
 })(jQuery); // End of use strict
