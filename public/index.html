@@ -205,14 +205,16 @@
             var data = {};
             data.name = $('#form-name').val();
             data.email = $('#exampleInputEmail1').val();
-          
+            var valid = true;
             if(data.name === ''){
               $('#form-name').addClass('invalid-input');
+              valid = false;
             }
-            else if(data.email === '' || !(data.email).includes('@')){
-              $('#exampleInputEmail1').addClass('invalid-input');              
+            if(data.email === '' || !(data.email).includes('@')){
+              $('#exampleInputEmail1').addClass('invalid-input');  
+              valid = false;            
             }
-            else{
+            if(valid){
               $('#form-name').removeClass('invalid-input');              
               $('#exampleInputEmail1').removeClass('invalid-input');
               $.ajax({
