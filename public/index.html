@@ -22,7 +22,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -81,7 +81,11 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">What's in the pack?</h2>
             <hr class="light my-4">
+            
+            <p class="text-white">Mentor Pack offers a customizable, affordable hygiene subscription service that provides all of your bathroom needs. 
+              Subscribe to products like charcol toothpaste, *insert adjective* shampoo, and conditioner.</p>
             <p class="text-faded mb-4"></p>
+            
             <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
           </div>
         </div>
@@ -284,12 +288,17 @@
         $(document).ready(function() { 
           $('#user-form').click(function() {
             console.log('clicked');
-          
+            
+
             var data = {};
             data.name = $('#form-name').val();
             data.email = $('#exampleInputEmail1').val();
           
-            $.ajax({
+            if(data.name === ''){
+              $('#form-name').addClass('invalid-input');
+            }
+            else{
+              $.ajax({
               type: 'POST',
               data: JSON.stringify(data),
               contentType: 'application/json',
@@ -301,7 +310,9 @@
                   $('#exampleInputEmail1').val('');
                   
               }
-            }); 
+            });
+            }
+             
           });	
 
           
@@ -317,7 +328,7 @@
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+    <script src="js/creative.js"></script>
 
   </body>
 
