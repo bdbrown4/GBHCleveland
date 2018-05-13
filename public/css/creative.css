@@ -318,6 +318,5 @@ header.masthead p {
 }
 
 .invalid-input{
-  border-left: 13px;
-  border-left-color: salmon;
+  border-color: salmon;
 }

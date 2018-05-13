@@ -51,7 +51,7 @@
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -68,7 +68,7 @@
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Helping people who are homeless through a convenient bathroom subscription service</p>
+            <p class="text-faded mb-5">Helping people experiencing homelessness through a convenient bathroom subscription service</p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
           </div>
         </div>
@@ -83,7 +83,7 @@
             <hr class="light my-4">
             
             <p class="text-white">Mentor Pack offers a customizable, affordable hygiene subscription service that provides all of your bathroom needs. 
-              Subscribe to products like charcol toothpaste, *insert adjective* shampoo, and conditioner.</p>
+              Subscribe to products like charcol toothpaste and sustainably sourced shampoo. ______________________</p>
             <p class="text-faded mb-4"></p>
             
             <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
@@ -245,7 +245,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
             <hr class="my-4">
-            <p class="mb-5">Join The Pack and we'll let you know when we launch!</p>
+            <p class="mb-5">Join The Pack and we'll let you know what we're up to and when we launch!</p>
           </div>
         </div>
         <div class="container-fluid">
@@ -287,9 +287,6 @@
     <script>			
         $(document).ready(function() { 
           $('#user-form').click(function() {
-            console.log('clicked');
-            
-
             var data = {};
             data.name = $('#form-name').val();
             data.email = $('#exampleInputEmail1').val();
@@ -297,7 +294,12 @@
             if(data.name === ''){
               $('#form-name').addClass('invalid-input');
             }
+            else if(data.email === '' || !(data.email).includes('@')){
+              $('#exampleInputEmail1').addClass('invalid-input');              
+            }
             else{
+              $('#form-name').removeClass('invalid-input');              
+              $('#exampleInputEmail1').removeClass('invalid-input');
               $.ajax({
               type: 'POST',
               data: JSON.stringify(data),
@@ -308,11 +310,9 @@
                   $('#signUpModal').modal('show');
                   $('#form-name').val('');
                   $('#exampleInputEmail1').val('');
-                  
               }
             });
             }
-             
           });	
 
           
