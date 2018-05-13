@@ -97,11 +97,14 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #F05F40;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  background-image: url("../img/mentor-pack-w.png");
+  height: 50px;
+  width: 100px;
+  border-radius: 25px 25px;
+  background-size: cover;
 }
+
+
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
   color: #f05f40;
@@ -320,13 +323,6 @@ header.masthead p {
 
 .invalid-input{
   border-color: salmon;
-}
-
-#backpackLogo{
-  width: 15%;
-  height: 15%;
-  border-radius: 75%;
-  box-shadow: gray 1px 1px;
 }
 
 nav ul li {  
