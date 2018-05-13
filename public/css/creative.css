@@ -175,8 +175,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/grooming-kit.jpg");
-  filter: blur(5px);
+  background-image: url("../img/grooming-kit-2.jpg");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
