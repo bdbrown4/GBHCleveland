@@ -80,6 +80,7 @@ img::-moz-selection {
   background: transparent;
 }
 
+
 .justify-content-center {
   display: flex;
   flex-direction: column;
@@ -319,4 +320,16 @@ header.masthead p {
 
 .invalid-input{
   border-color: salmon;
+}
+
+#backpackLogo{
+  width: 15%;
+  height: 15%;
+  border-radius: 75%;
+  box-shadow: gray 1px 1px;
+}
+
+nav ul li {  
+  display: flex;
+  flex-direction: row;
 }
