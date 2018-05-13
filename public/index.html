@@ -148,9 +148,26 @@
     </section>
 
     <section class="bg-dark text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">Learn more about the organizations we work with</h2>
-        <h3>Insert video here</h3>
+      <div class="row">
+        <div class="col-md-6 text-center mt-5">
+          <h2><strong>Quotes from our Partners</strong></h2><br/>
+            <p><em>"The backpack is one of the most important things. That backpack is like a piece of gold."</em></p>
+            <p><em>"It's about building relationships."</em></p>
+            <p><em>"I think people are always trying to find ways in which they can give back..."</em></p>
+            <!-- <p><em>"Relationships don't happen with one episode as a general rule..."</em></p> -->
+        </div>
+        <div class="col-md-6 text-center mt-2 border-top--sm">
+          <h2>
+            <strong>The Stats</strong>
+          </h2>
+          <em>Mentor Pack's mission helps address the following issues.</em><br/><br/>
+          <h4>36% of Clevelanders</h4>
+            <em>live below the poverty line</em><br/><br/>
+          <h4>4,698</h4>
+            <em>live in homeless shelters</em><br/><br/>
+          <h4>An income of $11,892</h4>
+           <em>is the poverty line</em>
+        </div>
       </div>
     </section>
 
@@ -212,7 +229,7 @@
             }
             if(data.email === '' || !(data.email).includes('@')){
               $('#exampleInputEmail1').addClass('invalid-input');  
-              valid = false;            
+              valid = false;             
             }
             if(valid){
               $('#form-name').removeClass('invalid-input');              

@@ -329,3 +329,5 @@ nav ul li {
   display: flex;
   flex-direction: row;
 }
+
+@media (max-width: 12450px)
