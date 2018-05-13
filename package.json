@@ -12,6 +12,7 @@
     "body-parser": "*",
     "cors": "*",
     "express": "*",
+    "gulp": "^3.9.1",
     "jsonwebtoken": "*",
     "mongodb": "^2.2.31",
     "mongoose": "*",
@@ -20,5 +21,8 @@
     "socket.io": "*"
   },
   "author": "Ben Brown",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^4.0.1"
+  }
 }

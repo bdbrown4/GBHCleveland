@@ -72,18 +72,41 @@
     }
   });
 
-  //
-  var userFormSubmit = function() {
-     $('#user-form"').on('submit', function (e) {
-      e.preventDefault(); 
-      var data = $("#user-form :input");
-       $.post('/postUserInfo', data);
-       console.log(data)
+//   //
+//   var userFormSubmit = function() {
+//      $('#user-form').on('submit', function (e) {
+//       e.preventDefault(); 
+//       var x = $('form-name');
+//       var y = $('exampleInputEmail1');
+//       let data = { "name": x, "email": y };
+//        $.post('/postUserInfo', data);
+//        console.log(data)
 
-    });
-  });
-
-  userFormSubmit();
-  console.log(userFormSubmit());
+//     });
+//   };
+//   userFormSubmit();
+//   console.log(userFormSubmit());
   
-})(jQuery); // End of use strict
+// })(jQuery); // End of use strict
+
+			
+$(document).ready(function() { 
+  $('#user-form').click(function() {
+  console.log('clicked');
+
+  var data = {};
+  data.name = $('#form-name').val();
+  data.email = $('#exampleInputEmail1').val();
+
+  $.ajax({
+  type: 'POST',
+  data: JSON.stringify(data),
+  contentType: 'application/json',
+          url: '/postUserInfo',						
+          success: function(data) {
+              console.log('success');
+          }
+      }); 
+  });	
+});
+});

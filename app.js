@@ -5,7 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
     console.log('Server started on port '+ port);
 });
@@ -43,5 +43,24 @@ app.get('/', (req, res) => {
 
 app.get('*',(req,res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+const UserInfo = require('./models/userInfo');
+
+// Send UserInfo to DB
+app.post('/postUserInfo', (req,res,next) => {
+    let userInfo = new UserInfo({
+        name: req.body.name,
+        email: req.body.email
+    });
+
+    UserInfo.addUserInfo(userInfo, (err, userInfo) => {
+        if(err){
+            console.log(err);
+            res.json({success: false, msg: 'Failed to send info'});
+        } else {
+            res.json({success:true, msg: 'Info sent successfully'});
+        }
+    });
 });
 
